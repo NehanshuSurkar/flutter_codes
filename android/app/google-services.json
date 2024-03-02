@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "290998043252",
+    "project_id": "schedulolap",
+    "storage_bucket": "schedulolap.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:290998043252:android:518be54990ca8c76388721",
+        "android_client_info": {
+          "package_name": "com.example.flutter_codes"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_f038dMzobmsXhub9ypL4vAhO5tMl6iA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
