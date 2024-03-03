@@ -1,4 +1,4 @@
-# flutter_codes
+# Schedulo App
 
 A new Flutter project.
 
