@@ -36,82 +36,78 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text("Login"),
-          titleTextStyle: const TextStyle(
-            color: Color.fromARGB(255, 255, 255, 255),
-            fontSize: 30.0,
-            fontWeight: FontWeight.bold,
-          ),
-          centerTitle: true,
-          backgroundColor: const Color.fromARGB(206, 129, 89, 238),
-        ),
+        // appBar: AppBar(
+        //   title: const Text("Login"),
+        //   titleTextStyle: const TextStyle(
+        //     color: Color.fromARGB(255, 255, 255, 255),
+        //     fontSize: 30.0,
+        //     fontWeight: FontWeight.bold,
+        //   ),
+        //   centerTitle: true,
+        //   backgroundColor: const Color.fromARGB(206, 129, 89, 238),
+        // ),
         body: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          const SizedBox(height: 30),
+          Image.network(
+            'https://cdni.iconscout.com/illustration/premium/thumb/forgot-password-6869766-5628002.png',
+            height: 250,
+            width: double.infinity,
+            fit: BoxFit.cover,
+          ),
+          const Text('Welcome again!',
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+                color: Color.fromARGB(206, 129, 89, 238),
+              )),
+          const SizedBox(height: 20),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(height: 30),
-              Image.network(
-                'https://cdni.iconscout.com/illustration/premium/thumb/forgot-password-6869766-5628002.png',
-                height:
-                    250, // Aap apni pasand ke anusaar height aur width set kar sakte hain
-                width: double
-                    .infinity, // Yeh image ka width screen ke width ke barabar hogi
-                fit: BoxFit
-                    .cover, // Yeh image ko container ke saath fit karne ke liye hai
+              LoginDetails.CustomTextField(
+                  emailController, "Email", Icons.mail, false),
+              LoginDetails.CustomTextField(
+                  passwordController, "Passowrd", Icons.password, true),
+              const SizedBox(height: 10),
+              LoginDetails.LoginButton(
+                () {
+                  login(emailController.text.toString(),
+                      passwordController.text.toString());
+                },
+                "Login",
               ),
-              const Text('Login here!',
-                  style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                    color: Color.fromARGB(206, 129, 89, 238),
-                  )),
-              const SizedBox(height: 20),
-              Column(
+              const SizedBox(height: 13),
+              Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  LoginDetails.CustomTextField(
-                      emailController, "Email", Icons.mail, false),
-                  LoginDetails.CustomTextField(
-                      passwordController, "Passowrd", Icons.password, true),
-                  const SizedBox(height: 10),
-                  LoginDetails.LoginButton(
-                    () {
-                      login(emailController.text.toString(),
-                          passwordController.text.toString());
-                    },
-                    "Login",
+                  const Text(
+                    "Didn't registered yet ?",
+                    style: TextStyle(fontSize: 16),
                   ),
-                  const SizedBox(height: 13),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text(
-                        "Didn't registered yet ?",
-                        style: TextStyle(fontSize: 16),
-                      ),
-                      TextButton(
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: ((context) =>
-                                        const Registration())));
-                          },
-                          child: const Text(
-                            'Register here',
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Color.fromARGB(206, 129, 89, 238),
-                            ),
-                          ))
-                    ],
-                  )
+                  TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: ((context) => const Registration())));
+                      },
+                      child: const Text(
+                        'Register here',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromARGB(206, 129, 89, 238),
+                        ),
+                      ))
                 ],
-              ),
+              )
             ],
           ),
-        ));
+        ],
+      ),
+    ));
   }
 }

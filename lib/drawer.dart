@@ -22,9 +22,7 @@ class MainDrawer extends StatelessWidget {
             child: Center(
               child: Text(
                 'Menu',
-                style: TextStyle(
-                  fontSize: 30.0,
-                ),
+                style: TextStyle(fontSize: 40.0, color: Colors.white),
               ),
             ),
           ),
